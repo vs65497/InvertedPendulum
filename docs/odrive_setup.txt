@@ -1,0 +1,77 @@
+// pin 19: RX - connect to ODrive TX 1
+// pin 18: TX - connect to ODrive RX 2
+
+sudo odrivetool
+
+odrv0.axis0.controller.config.control_mode = 0
+
+odrv0.axis0.controller.config.vel_limit = 10
+
+odrv0.config.enable_brake_resistor = True
+
+odrv0.axis0.encoder.config.cpr=20480
+
+odrv0.axis0.motor.config.current_lim =20
+
+odrv0.axis0.motor.config.calibration_current=20
+
+odrv0.axis0.motor.config.pole_pairs=7
+
+odrv0.config.brake_resistance=0.5
+
+odrv0.axis0.motor.config.motor_type=MOTOR_TYPE_HIGH_CURRENT
+
+dump_errors(odrv0, True)
+
+odrv0.save_configuration()
+
+odrv0.reboot()
+
+odrv0.axis0.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
+
+odrv0.axis0.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
+
+odrv0.axis0.controller.config.control_mode = CONTROL_MODE_VELOCITY_CONTROL
+
+odrv0.axis0.controller.input_vel = 1
+
+odrv0.axis0.controller.config.control_mode = CONTROL_MODE_TORQUE_CONTROL
+
+# Approximately 8.23 / Kv where Kv is in the units [rpm / V]
+odrv0.axis0.motor.config.torque_constant = 8.23 / 150
+
+odrv0.axis0.controller.input_torque = 0.1
+
+----
+
+odrv0.config.dc_max_negative_current
+
+odrv0.config.max_regen_current
+
+odrv0.axis0.motor.config.pole_pairs
+
+odrv0.config.enable_brake_resistor
+
+odrv0.config.brake_resistance
+
+odrv0.vbus_voltage
+
+----
+
+
+system: Error(s):
+  ODRIVE_ERROR_DC_BUS_OVER_REGEN_CURRENT
+axis0
+  axis: no error
+  motor: Error(s):
+    MOTOR_ERROR_SYSTEM_LEVEL
+  sensorless_estimator: no error
+  encoder: no error
+  controller: no error
+axis1
+  axis: no error
+  motor: Error(s):
+    MOTOR_ERROR_SYSTEM_LEVEL
+  sensorless_estimator: no error
+  encoder: no error
+  controller: no error
