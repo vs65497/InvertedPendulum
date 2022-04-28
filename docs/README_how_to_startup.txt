@@ -57,17 +57,17 @@ To change the gain:
 ===================
 
 Open MATLAB and go to
-C:\Users\vonde\Documents\School\2022 Spring\ENGR 100\cartpole.mlx
+/MATLAB/cartpole.mlx
 
 Open cartpole.mlx
 Scroll down and change the Q and R matricies to your wish.
 Run the section.
 
 Copy the K matrix and A-B*K and paste into:
-C:\Users\vonde\Documents\School\2022 Spring\ENGR 100\odrive_setup.txt
+/docs/odrive_setup.txt
 
-Duplicate linalg_Kxxx.h from C:\Users\vonde\Documents\School\2022 Spring\ENGR 100\activate_controller
-Duplicate linalg_Kxxx.h from C:\Users\vonde\Documents\School\2022 Spring\ENGR 100\swingup_controller
+Duplicate linalg_Kxxx.h from /activate_controller
+Duplicate linalg_Kxxx.h from /swingup_controller
 
 Scroll to bottom and edit K matrix and ABK matrix.
 
