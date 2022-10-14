@@ -28,7 +28,7 @@ The system only has 2 primary sensors: pendulum angle and motor encoder. The sec
 
 Given the two sensors, after initialization, we can track 4 inputs: pendulum angle, pendulum angular velocity, cart position, and cart velocity. Error is found by the difference between the current state of the system and the desired state (pendulum in the upright position).
 
-Due to having multiple inputs and multiple outputs, PID control is not able to be used. Instead I chose to use LQR.
+Due to having multiple inputs and multiple outputs, PID control is not able to be used (it can only handle single in, single out). Instead I chose to use LQR.
 
 ## Swing-Up Control
 
@@ -52,3 +52,8 @@ This is how I destroyed my computer. Though I learned a lot on this project, the
 
 ## Oscillations and Kalman Filter
 
+After running hundreds of tests to calibrate the motor and to choose the best LQR gains, I found that there was a lot of noise from my mechanical design and sensors. I believe this unmodeled noise was also highly non-linear in its nature. Furthermore, I believe that my method of "calculating" the pendulum velocity and cart position was incorrect. It turns out that these calculations may only be an approximation of old sensor data (last signal recieved). And even moreso, this out of date approximation is based on the system's mathematical model, not reality.
+
+I think the way to resolve both of these problems is to use a Kalman Filter. The Kalman Filter would find the difference between a proper state estimation (through system dynamics) and the real state (based on sensor data) and drive this error to 0, resulting in a more accurate representation of the system's state. Once this is fed into the LQR compensator, it should remove some of the oscillations that occur when the pendulum is trying to swing up and when it is within the linearized zone but far from PI.
+
+Additionally, changing the mechanical design of the cart to something better (as found in CNC's) would go a long way to remove those oscillations.
