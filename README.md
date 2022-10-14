@@ -32,7 +32,7 @@ Due to having multiple inputs and multiple outputs, PID control is not able to b
 
 ## Swing-Up Control
 
-The inverted pendulum is actually a non-linear system. You can see this by thinking about moving around a circle. Given y = cos(x), we know that changing x from 0 to 2xPI, y will go from 0 to 1, back to 0, down to -1, then back to 0 --> (0, 1, 0, -1, 0). As we can see this is cyclic, not linear. This is why the inverted pendulum is an interesting control problem.
+The inverted pendulum is actually a non-linear system. You can see this by thinking about moving around a circle. Given y = cos(x), we know that changing x from 0 to 2PI, y will go from 0 to 1, back to 0, down to -1, then back to 0 --> (0, 1, 0, -1, 0). As we can see this is cyclic, not linear. This is why the inverted pendulum is an interesting control problem.
 
 Stabilizing the pendulum in the up position works for the LQR controller because we are only looking at a very small region where the system effectively behaves as a linear system. If we say that PI is the up position, then we are looking at a region which is maybe PI +/- 0.001. So, for our pendulum to balance, we must start it in a place very close to PI.
 
