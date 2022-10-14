@@ -1,7 +1,7 @@
 # InvertedPendulum
 
 
-<img src="https://drive.google.com/file/d/1n8LWLBsGNG6CWOGwR360sxcLK9x-L2pi/view?usp=sharing" height="360">
+<img src="https://github.com/zanzivyr/InvertedPendulum/blob/main/photos/IMG_1826.JPG" height="360">
 
 In Spring 2022 I took an engineering research class. The professor allowed me to choose a topic I had been looking into for awhile -- Control Theory. Control seemed to be a landmark subject that would allow me to build more complex robots. To deepen my knowledge I decided to build an Inverted Pendulum, which is one of the fundamental ways to understand Control.
 
