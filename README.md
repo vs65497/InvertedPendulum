@@ -43,3 +43,12 @@ In all the area outside PI, the pendulum's movement is non-linear. To control th
 If we instead define the pendulums position (via angle) on its mechanical energy, then we can find a function which can "naturally" drive the pendulum to the up position. This is our Lyapunov energy function. However, there is one caveat: at the absolute down position, the energy function will return 0 and prevent the pendulum from moving. As a result, the pendulum needs a kick to get started.
 
 This is why in the videos you see me tapping the pendulum in some clips. Later on I wrote a function to inject some energy into the system automatically.
+
+## Switching Controllers
+
+During the course of the swing up, at some point the swing up controller must deactivate so that the LQR compensator can activate. The problem is that if there is too much energy in the system when the pendulum is passing through our linearized region, then the LQR compensator will not be able to "catch" the pendulum. The pendulum will blast through the linearized zone and then be back into the swing-up zone which can lead to a "death spin." 
+
+This is how I destroyed my computer. Though I learned a lot on this project, the most important thing I learned is that robots **MUST** be ran in safe areas with nothing valuable in them. Robots have no sensitivity to the world and will attempt to do exactly what you program them to do. Sometimes it leads to disastrous outcomes.
+
+## Oscillations and Kalman Filter
+
