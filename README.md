@@ -22,6 +22,8 @@ PowerPoint Presentation available here: https://docs.google.com/presentation/d/1
 
 ## Pendulum Design
 
+<img src="https://github.com/zanzivyr/InvertedPendulum/blob/main/photos/pendulum_cad1.png" height="320">  <img src="https://github.com/zanzivyr/InvertedPendulum/blob/main/photos/pendulum_cad2.png" height="320">
+
 Using SolidWorks, I designed a rail, cart, and pendulum. The cart interfaces with the rail in a similar way to a 3D printer. This was passable in the beginning but I think it caused a lot of oscillations when driving the pendulum. After concluding the project I had a chance to look at a lot of industrial CNC machines. These kinds of cart-rail systems are much better, so I will use them next time.
 
 ## Controller Selection (PID vs LQR)
