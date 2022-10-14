@@ -61,3 +61,9 @@ After running hundreds of tests to calibrate the motor and to choose the best LQ
 I think the way to resolve both of these problems is to use a Kalman Filter. The Kalman Filter would find the difference between a proper state estimation (through system dynamics) and the real state (based on sensor data) and drive this error to 0, resulting in a more accurate representation of the system's state. Once this is fed into the LQR compensator, it should remove some of the oscillations that occur when the pendulum is trying to swing up and when it is within the linearized zone but far from PI.
 
 Additionally, changing the mechanical design of the cart to something better (as found in CNC's) would go a long way to remove those oscillations.
+
+## Project End
+
+I completed this project for my midterm. Given the available time I was only able to implement and test the LQR compensator, which you can see working in the above videos. The code for the full LQG compensator is available here (https://github.com/zanzivyr/InvertedPendulum/blob/main/LQG_swingup_controller.ino), but it is untested.
+
+In conclusion, I feel that I have a much better understanding of Control after building this project. Even though it does not perform exactly as I'd hoped, I believe that I was able to get it functioning well enough to learn about many of the fundamental points.
