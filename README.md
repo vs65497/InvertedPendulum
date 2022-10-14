@@ -20,7 +20,7 @@ PowerPoint Presentation available here: https://docs.google.com/presentation/d/1
 
 ## Pendulum Design
 
-Using SolidWorks, I designed a rail, cart, and pendulum. The cart interfaces with the rail in a similar way to a 3D printer. This was passible in the beginning but I think it caused a lot of oscillations when driving the pendulum. After concluding the project I had a chance to look at a lot of industrial CNC machines. These kinds of cart-rail systems are much better, so I will use them next time.
+Using SolidWorks, I designed a rail, cart, and pendulum. The cart interfaces with the rail in a similar way to a 3D printer. This was passable in the beginning but I think it caused a lot of oscillations when driving the pendulum. After concluding the project I had a chance to look at a lot of industrial CNC machines. These kinds of cart-rail systems are much better, so I will use them next time.
 
 ## Controller Selection (PID vs LQR)
 
@@ -32,3 +32,14 @@ Due to having multiple inputs and multiple outputs, PID control is not able to b
 
 ## Swing-Up Control
 
+The inverted pendulum is actually a non-linear system. You can see this by thinking about moving around a circle. Given y = cos(x), we know that changing x from 0 to 2xPI, y will go from 0 to 1, back to 0, down to -1, then back to 0 --> (0, 1, 0, -1, 0). As we can see this is cyclic, not linear. This is why the inverted pendulum is an interesting control problem.
+
+Stabilizing the pendulum in the up position works for the LQR controller because we are only looking at a very small region where the system effectively behaves as a linear system. If we say that PI is the up position, then we are looking at a region which is maybe PI +/- 0.001. So, for our pendulum to balance, we must start it in a place very close to PI.
+
+### What happens outside of this linearized region?
+
+In all the area outside PI, the pendulum's movement is non-linear. To control this we can move from focusing on the angle of the pendulum to focusing on the energy of the pendulum.
+
+If we instead define the pendulums position (via angle) on its mechanical energy, then we can find a function which can "naturally" drive the pendulum to the up position. This is our Lyapunov energy function. However, there is one caveat: at the absolute down position, the energy function will return 0 and prevent the pendulum from moving. As a result, the pendulum needs a kick to get started.
+
+This is why in the videos you see me tapping the pendulum in some clips. Later on I wrote a function to inject some energy into the system automatically.
