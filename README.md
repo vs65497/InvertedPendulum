@@ -2,7 +2,7 @@
 
 <img src="https://github.com/zanzivyr/InvertedPendulum/blob/main/photos/IMG_1826.JPG" height="320"> [![Inverted Pendulum: Best Trials](https://img.youtube.com/vi/Sc8SkmnBHfo/0.jpg)](https://youtu.be/Sc8SkmnBHfo)
 
-In Spring 2022 I took an engineering research class. The professor allowed me to choose a topic I had been looking into for awhile -- Control Theory. Control seemed to be a landmark subject that would allow me to build more complex robots. To deepen my knowledge I decided to build an Inverted Pendulum, which is one of the fundamental ways to understand Control.
+In Spring 2022 I took an engineering project class. The professor allowed me to choose a topic I had been looking into for awhile -- Control Theory. Control seemed to be a landmark subject that would allow me to build more complex robots. To deepen my knowledge I decided to build an Inverted Pendulum, which is one of the fundamental ways to understand Control.
 
 For this project I focused on building a Linear-Quadratic Regulator (LQR) compensator and a Swing-Up controller (via Lyapunov energy function). By the end, I attempted to implement a Kalman Filter, thus turning my controller into a Linear-Quadradic Gaussian (LQG) compensator.
 
