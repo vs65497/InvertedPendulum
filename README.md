@@ -1,6 +1,6 @@
 # InvertedPendulum
 
-<img src="https://github.com/zanzivyr/InvertedPendulum/blob/main/photos/IMG_1826.JPG" height="320"> [![Inverted Pendulum: Best Trials](https://img.youtube.com/vi/Sc8SkmnBHfo/0.jpg)](https://youtu.be/Sc8SkmnBHfo)
+<img src="https://github.com/vs65497/InvertedPendulum/blob/main/photos/IMG_1826.JPG" height="320"> [![Inverted Pendulum: Best Trials](https://img.youtube.com/vi/Sc8SkmnBHfo/0.jpg)](https://youtu.be/Sc8SkmnBHfo)
 
 In Spring 2022 I took an engineering project class. The professor allowed me to choose a topic I had been looking into for awhile -- Control Theory. Control seemed to be a landmark subject that would allow me to build more complex robots. To deepen my knowledge I decided to build an Inverted Pendulum, which is one of the fundamental ways to understand Control.
 
@@ -68,6 +68,6 @@ Additionally, changing the mechanical design of the cart to something better (as
 
 ## Project End
 
-I completed this project for my midterm. Given the available time I was only able to implement and test the LQR compensator, which you can see working in the above videos. The code for the full LQG compensator is available here (https://github.com/zanzivyr/InvertedPendulum/blob/main/LQG_swingup_controller.ino), but it is untested.
+I completed this project for my midterm. Given the available time I was only able to implement and test the LQR compensator, which you can see working in the above videos. The code for the full LQG compensator is available here (https://github.com/vs65497/InvertedPendulum/blob/main/LQG_swingup_controller.ino), but it is untested.
 
 In conclusion, I feel that I have a much better understanding of Control after building this project. Even though it does not perform exactly as I'd hoped, I believe that I was able to get it functioning well enough to learn about many of the fundamental points.
